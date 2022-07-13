@@ -1,0 +1,34 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: reggie_take_out
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      #?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8
+      #&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+      url: jdbc:mysql://localhost:3306/db_delivery
+      username: root
+      password: 123456
+  #mail有关配置,smtp:邮件发送协议
+  mail:
+    #邮件服务供应商
+    host: smtp.qq.com
+    #邮件地址
+    username: 2418576589@qq.com
+    #POP3/SMTP服务器密匙
+    password: yjbrewzmyneidige
+
+mybatis-plus:
+  configuration:
+    #在映射实体或者属性时，将数据库中表名和字段名中的下划线去掉，按照驼峰命名法映射
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: ASSIGN_ID
+#文件上传路径
+reggie:
+  path: D:\img\
+
